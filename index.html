@@ -710,9 +710,9 @@
                     requestAnimationFrame(() => {
                         layers.forEach((layer, index) => {
                             // ===== AJUSTE DE SENSIBILIDADE AQUI =====
-                            const depth = (index + 1) * 1.5;         // Aumentado de 0.5 para 1.5
-                            const moveX = (x / 45) * 30 * depth;     // Multiplicador aumentado de 10 para 30
-                            const moveY = (y / 45) * 30 * depth;     // Multiplicador aumentado de 10 para 30
+                            const depth = (index + 1) * 2.5;         // Aumentado de 0.5 para 1.5
+                            const moveX = (x / 45) * 0 * depth;     // Multiplicador aumentado de 10 para 30
+                            const moveY = (y / 45) * 40 * depth;     // Multiplicador aumentado de 10 para 30
                             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                         });
                     });
@@ -751,7 +751,7 @@
             }
         });
         </script>
-        
+
         <!-- CORREÇÃO DO ERRO DO SLIDER REVOLUTION --> 
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
