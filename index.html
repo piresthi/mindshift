@@ -190,9 +190,9 @@
 
                                     <div class="tp-caption tp-resizeme alt-font font-weight-400"
                                          data-x="['center']" data-y="['bottom']" data-voffset="['130','85','80','100']" 
-                                         data-fontsize="['22','20','18','16']" data-lineheight="['30','28','26','24']"
+                                         data-fontsize="['35','20','18','18']" data-lineheight="['30','28','26','24']" data-color="#ffffff" 
                                          data-frames='[{"from":"Y:-50px;opacity:0;","speed":1000,"to":"Y:0;o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-                                         style="z-index: 8;">Marketing Digital ao seu alcance. Deixe que cuidamos da sua marca para que você cuide de vender.</div>
+                                         style="z-index: 8;">Marketing Digital ao seu alcance.</div>
                                          
                                     <a class="tp-caption tp-resizeme section-link" href="#down-section" 
                                        data-x="['center']" data-y="['bottom']" data-voffset="['45','30','30','30']" 
@@ -710,9 +710,9 @@
                     requestAnimationFrame(() => {
                         layers.forEach((layer, index) => {
                             // ===== AJUSTE DE SENSIBILIDADE AQUI =====
-                            const depth = (index + 1) * 2.5;         // Aumentado de 0.5 para 1.5
+                            const depth = (index + 1) * 2;         // Aumentado de 0.5 para 1.5
                             const moveX = (x / 45) * 0 * depth;     // Multiplicador aumentado de 10 para 30
-                            const moveY = (y / 45) * 40 * depth;     // Multiplicador aumentado de 10 para 30
+                            const moveY = (y / 45) * 30 * depth;     // Multiplicador aumentado de 10 para 30
                             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                         });
                     });
