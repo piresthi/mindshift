@@ -26,12 +26,10 @@
         <style>
             .logo-container {
               position: relative;
-              /* Usando unidades de viewport para responsividade */
               width: 85vw;   
               height: 85vh;
-              /* Definindo um tamanho máximo para telas grandes */
-              max-width: 1100px;
-              max-height: 1000px;
+              max-width: 800px;
+              max-height: 700px;
               margin: 0 auto; 
               perspective: 2000px; 
             }
@@ -46,7 +44,6 @@
               background-repeat: no-repeat;
               background-position: center;
               will-change: transform;
-              /* Transição mais suave */
               transition: transform 0.3s ease-out; 
             }
 
@@ -54,16 +51,15 @@
             .layer.mid { background-image: url("logo_mid.svg"); z-index: 2; }
             .layer.fg  { background-image: url("logo_fg.svg");  z-index: 3; }
             
-            /* Media Query para telas menores (tablets e celulares) */
             @media (max-width: 767px) {
                 .logo-container {
-                    width: 90vw; /* Ocupa mais a tela no celular */
+                    width: 90vw; 
                     height: 60vh;
-                    max-width: 400px; /* Limita o tamanho máximo */
+                    max-width: 400px; 
                 }
             }
         </style>
-        
+
     </head>
     <body data-mobile-nav-style="classic">
         <!-- start header -->
@@ -159,28 +155,19 @@
                     </div>
                 </div>
             </nav>
-        </header>
-        <!-- end header -->
-        <div class="main-content">
             <!-- start revolution slider -->
             <section class="p-0 example home-branding-agency bg-white">
                 <article class="content">
                     <div id="rev_slider_32_1_wrapper" class="rev_slider_wrapper fullscreen-container md-h-700px sm-h-400px" data-alias="mask-showcase" data-source="gallery">
-                        <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
                         <div id="rev_slider_32_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
                             <ul>    
                                 <!-- SLIDE 01 -->
                                 <li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="01" data-param1="01" data-description="">
                                     
-                                    <!-- LAYER DO LOGO PARALLAX -->
                                     <div class="tp-caption" 
-                                        data-x="center" 
-                                        data-y="center" 
-                                        data-width="['auto']"
-                                        data-height="['auto']"
-                                        data-type="html"
-                                        data-rsp_ 言っ="on"
-                                        data-frames='[{"delay":5,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'>
+                                        data-x="center" data-y="center" data-width="['auto']" data-height="['auto']"
+                                        data-type="html" data-rsp_ 言っ="on"
+                                        data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'>
                                         <div class="logo-container">
                                             <div class="layer bg"></div>
                                             <div class="layer mid"></div>
@@ -188,43 +175,33 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- IMAGEM DE FUNDO TRANSPARENTE E COR DE FUNDO DO SLIDE -->
                                     <img src="images/transparent.png" alt="" data-bgcolor="#F3F3F3" class="rev-slidebg" data-no-retina>
 
-                                    <!-- TEXTO "MindShift" SOBREPOSTO -->
                                     <div class="tp-caption alt-font tp-resizeme font-weight-600 rs-parallaxlevel-2" 
                                         id="slide-1-layer-5" 
-                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','5']"
-                                        data-whitespace="nowrap"
-                                        data-type="text"
-                                        data-responsive_offset="on" 
-                                        data-fontsize="['245','150','110','80']"
-                                        data-lineheight="['250','150','100','65']"
-                                        data-letterspacing="['-12','-4','-4','-4']"
-                                        data-color="#ffffff"
+                                        data-x="['center']" data-y="['middle']" data-voffset="['0','0','0','-30']"
+                                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" 
+                                        data-fontsize="['245','150','110','80']" data-lineheight="['250','150','100','65']"
+                                        data-letterspacing="['-12','-4','-4','-4']" data-color="#ffffff"
                                         data-frames='[{"delay":100,"split":"chars","splitdelay":0.1,"speed":1500,"split_direction":"random","frame":"0","from":"y:50px;sX:1;sY:1;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                                        data-textAlign="['center','center','center','center']"
                                         style="z-index: 7; white-space: nowrap; text-shadow: 2px 2px 10px rgba(0,0,0,0.3);">
                                     MindShift    
                                     </div>
 
-                                    <!-- TEXTO SECUNDÁRIO -->
                                     <div class="tp-caption tp-resizeme alt-font font-weight-400"
-                                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['130','85','80','100']" 
-                                         data-width="none"
-                                         data-height="none"
-                                         data-whitespace="nowrap"
-                                         data-fontsize="['22','20','18','16']"
-                                         data-lineheight="['30','28','26','24']"
-                                         data-letterspacing="['-1','-1','-1','-1']"
-                                         data-color="#232323"
-                                         data-type="text"
-                                         data-responsive_offset="on"
-                                         data-responsive="on"
+                                         data-x="['center']" data-y="['bottom']" data-voffset="['130','85','80','100']" 
+                                         data-fontsize="['22','20','18','16']" data-lineheight="['30','28','26','24']"
                                          data-frames='[{"from":"Y:-50px;opacity:0;","speed":1000,"to":"Y:0;o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-                                         data-textAlign="['center','center','center','center']">Marketing Digital ao seu alcance.</div>
+                                         style="z-index: 8;">Marketing Digital ao seu alcance. Deixe que cuidamos da sua marca para que você cuide de vender.</div>
+                                         
+                                    <a class="tp-caption tp-resizeme section-link" href="#down-section" 
+                                       data-x="['center']" data-y="['bottom']" data-voffset="['45','30','30','30']" 
+                                       data-frames='[{"from":"y:[100%];opacity:0;","speed":1000,"to":"o:1;","delay":1600,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                                       style="z-index: 10;">
+                                        <div class="rs-looped rs-slideloop" data-easing="linearEaseNone" data-delay="wait" data-speed="1" data-xs="0" data-xe="0" data-ys="-10" data-ye="0">
+                                            <i class="ti-mouse" style="line-height: 30px !important; color: #232323; font-size: 27px;"></i>
+                                        </div>
+                                    </a>   
                                 </li>
                             </ul>
                         </div>
@@ -669,11 +646,13 @@
                     </div>
                 </div>
             </div>
-        </footer>
+               </footer>
         <!-- end footer -->
+        
         <!-- start scroll to top -->
         <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
         <!-- end scroll to top -->
+        
         <!-- javascript -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/theme-vendors.min.js"></script>
@@ -683,49 +662,96 @@
         <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
         
-        <!-- SCRIPT OTIMIZADO PARA O EFEITO PARALLAX DO LOGO -->
+        <!-- SCRIPT UNIFICADO PARA EFEITO PARALLAX (MOUSE + GIROSCÓPIO) -->
         <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.querySelector(".logo-container");
-            // Se o container não existir nesta página, não faz nada
             if (!container) return;
 
             const layers = container.querySelectorAll(".layer");
             const eventContainer = document.querySelector("#rev_slider_32_1_wrapper");
 
-            let animationFrameId = null;
+            // Verifica se é um dispositivo touch para decidir qual efeito usar
+            const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-            eventContainer.addEventListener("mousemove", (e) => {
-                // Cancela o frame anterior para otimizar
-                if (animationFrameId) {
-                    cancelAnimationFrame(animationFrameId);
-                }
+            if (isTouchDevice()) {
+                // --- CÓDIGO PARA GIROSCÓPIO (CELULAR/TABLET) ---
 
-                // Usa requestAnimationFrame para uma animação mais fluida
-                animationFrameId = requestAnimationFrame(() => {
-                    let rect = eventContainer.getBoundingClientRect();
-                    let x = e.clientX - rect.left - rect.width / 2;
-                    let y = e.clientY - rect.top - rect.height / 2;
+                const requestPermissions = () => {
+                    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                        // iOS 13+
+                        DeviceOrientationEvent.requestPermission()
+                            .then(permissionState => {
+                                if (permissionState === 'granted') {
+                                    window.addEventListener('deviceorientation', handleOrientation);
+                                }
+                            })
+                            .catch(console.error);
+                    } else {
+                        // Outros navegadores (Android) ou iOS < 13
+                        window.addEventListener('deviceorientation', handleOrientation);
+                    }
+                };
 
-                    layers.forEach((layer, index) => {
-                        let depth = (index + 1) * 20; 
-                        let moveX = (x / rect.width) * depth;
-                        let moveY = (y / rect.height) * depth;
-                        layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+                // Adiciona um listener para o primeiro toque na tela para pedir permissão
+                document.body.addEventListener('touchend', requestPermissions, { once: true });
+
+
+                const handleOrientation = (event) => {
+                    // beta: inclinação frente/trás (-180 a 180)
+                    // gamma: inclinação esquerda/direita (-90 a 90)
+                    let y = event.beta; 
+                    let x = event.gamma;
+
+                    // Limita os valores para evitar movimentos bruscos
+                    x = Math.max(-45, Math.min(45, x));
+                    y = Math.max(-45, Math.min(45, y));
+
+                    requestAnimationFrame(() => {
+                        layers.forEach((layer, index) => {
+                            const depth = (index + 1) * 0.5; // Profundidade ajustada para o giroscópio
+                            const moveX = (x / 45) * 10 * depth; // Mapeia a rotação para um movimento em pixels
+                            const moveY = (y / 45) * 10 * depth;
+                            layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+                        });
                     });
-                });
-            });
+                };
 
-            eventContainer.addEventListener("mouseleave", () => {
-                cancelAnimationFrame(animationFrameId);
-                layers.forEach(layer => {
-                    layer.style.transform = "translate3d(0,0,0)";
-                });
-            });
+            } else {
+                // --- CÓDIGO PARA MOUSE (DESKTOP) ---
+                let animationFrameId = null;
+
+                const handleMouseMove = (e) => {
+                    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+                    animationFrameId = requestAnimationFrame(() => {
+                        let rect = eventContainer.getBoundingClientRect();
+                        let x = e.clientX - rect.left - rect.width / 2;
+                        let y = e.clientY - rect.top - rect.height / 2;
+
+                        layers.forEach((layer, index) => {
+                            let depth = (index + 1) * 20; 
+                            let moveX = (x / rect.width) * depth;
+                            let moveY = (y / rect.height) * depth;
+                            layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+                        });
+                    });
+                };
+
+                const handleMouseLeave = () => {
+                    cancelAnimationFrame(animationFrameId);
+                    layers.forEach(layer => {
+                        layer.style.transform = "translate3d(0,0,0)";
+                    });
+                };
+
+                eventContainer.addEventListener("mousemove", handleMouseMove);
+                eventContainer.addEventListener("mouseleave", handleMouseLeave);
+            }
         });
         </script>
 
-        <!-- CORREÇÃO DO ERRO DO SLIDER REVOLUTION EM AMBIENTE LOCAL --> 
+        <!-- CORREÇÃO DO ERRO DO SLIDER REVOLUTION --> 
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
@@ -737,8 +763,7 @@
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
 
         <script type="text/javascript">
-            var revapi266,
-                    tpj;
+            var revapi266, tpj;
             (function () {
                 if (!/loaded|interactive|complete/.test(document.readyState))
                     document.addEventListener("DOMContentLoaded", onLoad);
@@ -747,8 +772,7 @@
                 function onLoad() {
                     if (tpj === undefined) {
                         tpj = jQuery;
-                        if ("off" == "on")
-                            tpj.noConflict();
+                        if ("off" == "on") tpj.noConflict();
                     }
                     if (tpj("#rev_slider_32_1").revolution == undefined) {
                         revslider_showDoubleJqueryError("#rev_slider_32_1");
@@ -761,30 +785,18 @@
                             delay: 9000,
                             navigation: {
                                 keyboardNavigation: "on",
-                                keyboard_direction: "horizontal",
-                                mouseScrollNavigation: "off",
-                                mouseScrollReverse: "default",
                                 onHoverStop: "off",
-                                touch: {
-                                    touchenabled: "on",
-                                    touchOnDesktop: "on",
-                                    swipe_threshold: 75,
-                                    swipe_min_touches: 1,
-                                    swipe_direction: "horizontal",
-                                    drag_block_vertical: false
-                                }
                             },
                             parallax: {
                                 type: "mouse",
                                 origo: "slidercenter",
                                 speed: 2000,
                                 levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50, 46, 47, 48, 49, 50, 55],
-                                disable_onmobile: "on"
+                                disable_onmobile: "on" // Desativamos o parallax nativo do slider em mobile
                             },
                             responsiveLevels: [1240, 1025, 778, 480],
                             visibilityLevels: [1920, 1500, 1025, 768],
                             gridwidth: [1200, 1025, 778, 480],
-
                             lazyType: "none",
                             shadow: 0,
                             spinner: "spinner5",
@@ -810,10 +822,8 @@
                             }
                         });
                     }
-                    ; /* END OF revapi call */
                 }
-                ; /* END OF ON LOAD FUNCTION */
-            }()); /* END OF WRAPPING FUNCTION */
+            }());
         </script>
     </body>
-</html>
+</html> 
