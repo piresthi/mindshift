@@ -662,11 +662,11 @@
         <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
         
-        <!-- SCRIPT UNIFICADO PARA EFEITO PARALLAX (MOUSE + GIROSCÓPIO) -->
+<!-- SCRIPT UNIFICADO PARA EFEITO PARALLAX (MOUSE + GIROSCÓPIO COM MAIOR SENSIBILIDADE) -->
         <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.querySelector(".logo-container");
-            if (!container) return;
+            if (!container) return; // Se o container não existir, não executa o resto do script
 
             const layers = container.querySelectorAll(".layer");
             const eventContainer = document.querySelector("#rev_slider_32_1_wrapper");
@@ -709,9 +709,10 @@
 
                     requestAnimationFrame(() => {
                         layers.forEach((layer, index) => {
-                            const depth = (index + 1) * 0.5; // Profundidade ajustada para o giroscópio
-                            const moveX = (x / 45) * 10 * depth; // Mapeia a rotação para um movimento em pixels
-                            const moveY = (y / 45) * 10 * depth;
+                            // ===== AJUSTE DE SENSIBILIDADE AQUI =====
+                            const depth = (index + 1) * 1.5;         // Aumentado de 0.5 para 1.5
+                            const moveX = (x / 45) * 30 * depth;     // Multiplicador aumentado de 10 para 30
+                            const moveY = (y / 45) * 30 * depth;     // Multiplicador aumentado de 10 para 30
                             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                         });
                     });
@@ -750,7 +751,7 @@
             }
         });
         </script>
-
+        
         <!-- CORREÇÃO DO ERRO DO SLIDER REVOLUTION --> 
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
