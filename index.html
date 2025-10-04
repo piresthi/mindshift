@@ -1035,6 +1035,7 @@
         <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
         
 <!-- SCRIPT UNIFICADO PARA EFEITO PARALLAX (MOUSE + GIROSCÓPIO COM MAIOR SENSIBILIDADE) -->
+        <!-- SCRIPT UNIFICADO PARA EFEITO PARALLAX (MOUSE + GIROSCÓPIO COM MAPEAMENTO DE EIXO) -->
         <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.querySelector(".logo-container");
@@ -1043,7 +1044,6 @@
             const layers = container.querySelectorAll(".layer");
             const eventContainer = document.querySelector("#rev_slider_32_1_wrapper");
 
-            // Verifica se é um dispositivo touch para decidir qual efeito usar
             const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
             if (isTouchDevice()) {
@@ -1051,7 +1051,6 @@
 
                 const requestPermissions = () => {
                     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-                        // iOS 13+
                         DeviceOrientationEvent.requestPermission()
                             .then(permissionState => {
                                 if (permissionState === 'granted') {
@@ -1060,31 +1059,49 @@
                             })
                             .catch(console.error);
                     } else {
-                        // Outros navegadores (Android) ou iOS < 13
                         window.addEventListener('deviceorientation', handleOrientation);
                     }
                 };
 
-                // Adiciona um listener para o primeiro toque na tela para pedir permissão
                 document.body.addEventListener('touchend', requestPermissions, { once: true });
 
-
                 const handleOrientation = (event) => {
-                    // beta: inclinação frente/trás (-180 a 180)
-                    // gamma: inclinação esquerda/direita (-90 a 90)
-                    let y = event.beta; 
-                    let x = event.gamma;
+                    // gamma: rotação esquerda/direita (-90 a 90)
+                    // beta: rotação frente/trás (-180 a 180)
+                    let gamma = event.gamma;
+                    let beta = event.beta;
+                    
+                    let x, y;
 
-                    // Limita os valores para evitar movimentos bruscos
+                    // Verifica a orientação da tela
+                    // window.orientation: 0 ou 180 (retrato), 90 ou -90 (paisagem)
+                    const isLandscape = Math.abs(window.orientation) === 90;
+
+                    if (isLandscape) {
+                        // MODO PAISAGEM (CELULAR DEITADO)
+                        // O movimento horizontal (X) é controlado pela inclinação frente/trás (beta)
+                        x = beta;
+                        // O movimento vertical (Y) é controlado pela inclinação esquerda/direita (gamma)
+                        // Invertemos o sinal dependendo de qual lado o celular foi girado
+                        y = (window.orientation > 0) ? -gamma : gamma;
+                    } else {
+                        // MODO RETRATO (CELULAR EM PÉ)
+                        // O movimento horizontal (X) é controlado pela inclinação esquerda/direita (gamma)
+                        x = gamma;
+                        // O movimento vertical (Y) é controlado pela inclinação frente/trás (beta)
+                        // Subtraímos 45 para centralizar o ponto "zero" (quando o celular está levemente inclinado para o usuário)
+                        y = beta - 45; 
+                    }
+
+                    // Limita os valores para evitar movimentos extremos
                     x = Math.max(-45, Math.min(45, x));
                     y = Math.max(-45, Math.min(45, y));
 
                     requestAnimationFrame(() => {
                         layers.forEach((layer, index) => {
-                            // ===== AJUSTE DE SENSIBILIDADE AQUI =====
-                            const depth = (index + 1) * 2;         // Aumentado de 0.5 para 1.5
-                            const moveX = (x / 45) * 10 * depth;     // Multiplicador aumentado de 10 para 30
-                            const moveY = (y / 45) * 10 * depth;     // Multiplicador aumentado de 10 para 30
+                            const depth = (index + 1) * 1.5;
+                            const moveX = (x / 45) * 30 * depth;
+                            const moveY = (y / 45) * 30 * depth;
                             layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                         });
                     });
@@ -1123,7 +1140,6 @@
             }
         });
         </script>
-
         <!-- CORREÇÃO DO ERRO DO SLIDER REVOLUTION --> 
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
