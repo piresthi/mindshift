@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "mindshift-011091"
-  }
+    "default": "mindshift-br",
+    "prod": "mindshift-br"
+  },
+  "targets": {},
+  "etags": {}
 }
